@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="media/img/yael.png" type="image/png">
+        <title>Publications | Yael Hochberg</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+<style>
+    #published {
+        opacity: .7;
+    }
+</style>
+<div class="nav-header" id="myHeader">
+    <div id="nav-btn-view">
+        <div class="nav-line"></div>
+        <div class="nav-line"></div>
+        <div class="nav-line"></div>
+    </div>
+    <img id="head-title-image" src="media/img/yael.png"/>
+    <h2 id="header-text">Yael Hochberg</h2>
+
+    <div id="nav-row">
+    <a href="research.html">Research</a>
+    <a href="teaching.html">Teaching</a>
+    <a target="_blank" href="media/Hochberg%20CV%205-24.pdf">CV</a>
+    <a onclick="contact()">Contact</a> 
+    </div> 
+</div>
+
+
+    <div class="content" >
+
+        <div id="nav-view-mobile">
+
+            <div id="nav-btn-view" style="margin-top: 4vh; margin-left: 4vh; justify-content: center;">
+                <div class="nav-line" style="transform: rotate(45deg);"></div>
+                <div class="nav-line" style="transform: rotate(-45deg);"></div>
+            </div>
+
+            <div id="nav-column">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="teaching.html">Teaching</a>
+                <a target="_blank" href="media/Hochberg%20CV%205-24.pdf">CV</a>
+                <a onclick="contact()">Contact</a> 
+            </div>
+        </div>
+        <script type="text/javascript" src="nav.js"></script>
+
+
+
+        <div style="width:100vw; padding-top: 3vh;  background-color: white;">
+            <a class="researchNav" id="published" href="research.html">Published</a>
+            <a class="researchNav" id="progress" href="progress.html">Working Papers</a>
+            <a class="researchNav" id="all_research" href="all_research.html">All Research</a>
+        </div>
+
+        <script type="text/javascript" src="papers.js"></script>
+
+        <script>
+            getArticles("published")
+        </script>
+
+    </div>
+
+    <script>
+        var heading = document.getElementById("header-text")
+
+        heading.addEventListener("click", function() {
+                window.location.href = "index.html"; // Replace with your desired link
+        });
+
+    </script>
+
+<footer id="footer">
+
+    <div id="footer-top">
+        <div class="footer-top-stack">
+            <div>
+                Professor of Finance and Ralph S. O'Connor Professor of Entrepreneurship Jones Graduate School of Business
+            </div>
+            <div>
+                Rice University
+            </div>
+
+            <div>
+                6100 Main Street, MS-531
+            </div>
+            <div>
+                Houston, TX 77005
+
+            </div>
+        </div>
+
+        <div class="footer-top-stack">
+            <div>
+                Research Affiliate
+
+            </div>
+            <div>
+                Sloan School of Management
+            </div>
+
+            <div>
+                Massachusetts Institute of Technology
+            </div>
+
+            <div>
+                Cambridge, MA 02142
+            </div>
+        </div>
+
+        <div class="footer-top-stack">
+            <div>
+                Research Associate
+
+            </div>
+            <div>
+                National Bureau of Economic Research
+
+            </div>
+
+            <div>
+                Cambridge, MA
+            </div>
+
+        </div>
+
+        
+
+        <div class="footer-top-stack">
+            <div>
+                Head
+
+            </div>
+            <div>
+                Rice University Entrepreneurship Initiative and
+                Liu Idea Lab for Innovation and Entrepreneurship
+            </div>
+
+            <div>
+                Rice University
+            </div>
+
+            <div>
+                6100 Main Street, MS-531
+            </div>
+            <div>
+                Houston, TX 77005
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="footer-bottom">
+        <div>CONTACT INFORMATION</div> 
+        <div>Voice: (312) 650-9235</div>
+        
+        <div style="flex-direction: row; display: flex; text-align: center; justify-content: center;">
+            <div>
+              Email:  
+            </div>
+            
+            <div style="display: flex; flex-direction: column; margin-left: .4vw;">
+               <a class="email" href="mailto:hochberg@rice.edu">hochberg@rice.edu</a>
+               <a class="email" href="mailto:hochberg@mit.edu">hochberg@mit.edu</a> 
+            </div>
+        
+        </div>
+        
+        <div>Twitter: <a class="email" href="https://twitter.com/yaelhochberg">@yaelhochberg</a></div>
+    </div>
+
+  </footer>
+
+
+
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var title = document.getElementById("header-text")
+    var sticky = header.offsetTop;
+    var profile = document.getElementById("about-image")
+    var headImage = document.getElementById("head-title-image")
+    var footer = document.getElementById("footer")
+    
+    function myFunction() {
+
+
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        
+      } else {
+        header.classList.remove("sticky");
+        
+      }
+    }
+
+    function home() {
+        
+        header.scrollIntoView({ behavior: "smooth" });
+
+    }
+
+    function contact() {
+        document.getElementById("nav-view-mobile").style.width = "0vw"
+        footer.scrollIntoView({behavior: "smooth"})
+    }
+</script>
+
+<script>
+var heading = document.getElementById("header-text")
+var headingImage = document.getElementById("head-title-image")
+
+heading.addEventListener("click", function() {
+    window.location.href = "index.html"; // Replace with your desired link
+});
+
+headingImage.addEventListener("click", function() {
+    window.location.href = "index.html"; // Replace with your desired link
+});
+
+function goToResearch() {
+window.location.href = "research.html";
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+
+    let allFigures = document.querySelectorAll(".article-figure")
+
+    for(let i = 0; i < allFigures.length; i++){
+        allFigures[i].style.height = "inherit"
+    }
+})
+</script>
+</body>
+</html>
